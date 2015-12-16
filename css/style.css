@@ -1,0 +1,22 @@
+h3 { margin-top: 0; }
+h4 { margin-top: 6px !important; }
+.top-margin { margin-top: 50px; }
+input[type=text], button { border: black 1px solid; }
+
+.listblock {
+    padding: 20px;
+    border-radius: 5px;
+    min-height: 60px;
+    background-color: whitesmoke;
+    border: 1px solid dimgray;
+    margin: 2px, 0px, 2px, 0px;
+    text-align: center;
+}
+
+body {
+    background: rgb(69,81,117);
+    background: -moz-radial-gradient(center, ellipse cover,  rgb(69,81,117) 30%, rgb(29,43,58) 100%);
+    background: -webkit-radial-gradient(center, ellipse cover,  rgb(69,81,117) 30%,rgb(29,43,58) 100%);
+    background: radial-gradient(ellipse at center,  rgb(69,81,117) 30%,rgb(29,43,58) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#455175', endColorstr='#1d2b3a',GradientType=1 );
+}
