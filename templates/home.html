@@ -13,12 +13,21 @@
     <div class="col-xs-12">
         <div ng-repeat="task in lc.tasks track by $index">
             <div class="listblock" ng-class="{finished: task.finished}">
+
+                <!-- FINISH BUTTON -->
                 <div class="col-xs-2 finishbtn" ng-click="lc.finishTask(task)" ng-model="task.finished"><span class="glyphicon glyphicon-ok"></span></div>
+
+
+                <!-- TASK NAME -->
                 <div class="col-xs-8">
                     <span ng-bind="task.name"></span>
                     <p>{{$index+1}}</p>
                 </div>
+
+
+                <!-- DELETE BUTTON -->
                 <div class="col-xs-2 delbtn" ng-click="lc.delTask($index)"><span class="glyphicon glyphicon-remove"></span></div>
+
             </div>
         </div>
     </div>

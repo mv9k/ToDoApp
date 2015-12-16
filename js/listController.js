@@ -31,12 +31,13 @@
         //function sortTasks() {
         //    lc.tasks = $filter('orderBy')(lc.tasks, 'priority');
         //}
+
         function finishTask(task) {
             task.finished = true;
         }
 
         function addTask(task) {
-            lc.tasks.push(task);
+            lc.tasks.push({'name': task.name, 'finished': false});
 
         }
 
