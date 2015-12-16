@@ -1,13 +1,13 @@
 h3 { margin-top: 0; }
 h4 { margin-top: 6px !important; }
-.top-margin { margin-top: 50px; }
+.top-margin { margin-top: 60px; }
 input[type=text], button { border: black 1px solid; }
 
 .listblock {
     font-size: 19px;
     padding: 20px;
     border-radius: 5px;
-    min-height: 60px;
+    min-height: 90px;
     background-color: rgba(0,0,0,0.2);
     color: whitesmoke;
     border: 1px solid dimgray;
@@ -31,5 +31,21 @@ input {
     background-color: rgba(0,0,0,0.2);
 }
 #addtaskbtn {
+    width: 55px;
     padding: 2px;
+}
+.finished {
+    background-color: rgba(77, 255, 228, 0.39);
+}
+.finishbtn {
+    padding: 10px;
+    border-radius: 25px;
+    border: 1px solid black;
+    color: lawngreen;
+}
+.delbtn {
+    padding: 10px;
+    border-radius: 25px;
+    border: 1px solid black;
+    color: #f5235e;
 }

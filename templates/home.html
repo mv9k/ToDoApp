@@ -4,15 +4,22 @@
     <div class="listblock">
         <form role="form" ng-submit="lc.addTask(task)">
 
-            <input type="text" ng-model="task.name" placeholder="enter task name" size="45" required/>
+            <input type="text" ng-model="task.name" placeholder="enter task name" size="30" required/>
             <!--<h4>List Name: <span ng-bind="lc.listname"></span></h4>-->
             <!--<button ng-click="lc.doSomething()">cl</button>-->
             <input type="submit" value=" + " id="addtaskbtn"/>
         </form>
     </div>
-    <div class="col-xs-12" ng-model="lc.tasks">
-        <div ng-repeat="task in lc.tasks track by $index" class="listblock">
-            <span ng-bind="task.name"></span>
+    <div class="col-xs-12">
+        <div ng-repeat="task in lc.tasks track by $index">
+            <div class="listblock" ng-class="{finished: task.finished}">
+                <div class="col-xs-2 finishbtn" ng-click="lc.finishTask(task)" ng-model="task.finished"><span class="glyphicon glyphicon-ok"></span></div>
+                <div class="col-xs-8">
+                    <span ng-bind="task.name"></span>
+                    <p>{{$index+1}}</p>
+                </div>
+                <div class="col-xs-2 delbtn" ng-click="lc.delTask($index)"><span class="glyphicon glyphicon-remove"></span></div>
+            </div>
         </div>
     </div>
 </div>
