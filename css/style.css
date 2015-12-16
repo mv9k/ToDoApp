@@ -20,3 +20,7 @@ body {
     background: radial-gradient(ellipse at center,  rgb(69,81,117) 30%,rgb(29,43,58) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#455175', endColorstr='#1d2b3a',GradientType=1 );
 }
+
+html {
+    height: 100%;
+}
