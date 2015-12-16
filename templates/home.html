@@ -4,31 +4,56 @@
     <div class="listblock">
         <form role="form" ng-submit="lc.addTask(task)">
 
+            <input type="text" ng-model="task.listname" placeholder="List Name" size="20" required/>
             <input type="text" ng-model="task.name" placeholder="enter task name" size="30" required/>
-            <!--<h4>List Name: <span ng-bind="lc.listname"></span></h4>-->
-            <!--<button ng-click="lc.doSomething()">cl</button>-->
             <input type="submit" value=" + " id="addtaskbtn"/>
         </form>
     </div>
+
+<div class="col-xs-12 listblock" ng-repeat="list in lc.lists">
+    <h2>{{list}}</h2>
+    <hr>
     <div class="col-xs-12">
-        <div ng-repeat="task in lc.tasks track by $index">
+        <div ng-repeat="task in lc.tasks | filter:{ listname: list }">
             <div class="listblock" ng-class="{finished: task.finished}">
 
-                <!-- FINISH BUTTON -->
-                <div class="col-xs-2 finishbtn" ng-click="lc.finishTask(task)" ng-model="task.finished"><span class="glyphicon glyphicon-ok"></span></div>
+            <!-- FINISH BUTTON -->
+            <div class="col-xs-2 finishbtn" ng-click="lc.finishTask(task)" ng-model="task.finished"><span class="glyphicon glyphicon-ok"></span></div>
 
 
-                <!-- TASK NAME -->
-                <div class="col-xs-8">
-                    <span ng-bind="task.name"></span>
-                    <p>{{$index+1}}</p>
-                </div>
-
-
-                <!-- DELETE BUTTON -->
-                <div class="col-xs-2 delbtn" ng-click="lc.delTask($index)"><span class="glyphicon glyphicon-remove"></span></div>
-
+            <!-- TASK NAME -->
+            <div class="col-xs-8">
+            <span ng-bind="task.name"></span>
+            <!--<p>{{$index+1}}</p>-->
             </div>
+
+
+            <!-- DELETE BUTTON -->
+            <div class="col-xs-2 delbtn" ng-click="lc.delTask($index)"><span class="glyphicon glyphicon-remove"></span></div>
         </div>
     </div>
+</div>
+
+
+    <!--<div class="col-xs-12">-->
+        <!--<div ng-repeat="task in lc.tasks track by $index ">-->
+            <!--<div class="listblock" ng-class="{finished: task.finished}">-->
+
+                <!--&lt;!&ndash; FINISH BUTTON &ndash;&gt;-->
+                <!--<div class="col-xs-2 finishbtn" ng-click="lc.finishTask(task)" ng-model="task.finished"><span class="glyphicon glyphicon-ok"></span></div>-->
+
+
+                <!--&lt;!&ndash; TASK NAME &ndash;&gt;-->
+                <!--<div class="col-xs-8">-->
+                    <!--<span ng-bind="task.name"></span>-->
+                    <!--<p>{{$index+1}}</p>-->
+                <!--</div>-->
+
+
+                <!--&lt;!&ndash; DELETE BUTTON &ndash;&gt;-->
+                <!--<div class="col-xs-2 delbtn" ng-click="lc.delTask($index)"><span class="glyphicon glyphicon-remove"></span></div>-->
+
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
 </div>

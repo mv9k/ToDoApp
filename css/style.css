@@ -4,7 +4,7 @@ h4 { margin-top: 6px !important; }
 input[type=text], button { border: black 1px solid; }
 
 .listblock {
-    font-size: 19px;
+    font-size: 20px;
     padding: 20px;
     border-radius: 5px;
     min-height: 90px;
