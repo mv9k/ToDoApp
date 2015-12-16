@@ -4,12 +4,14 @@ h4 { margin-top: 6px !important; }
 input[type=text], button { border: black 1px solid; }
 
 .listblock {
+    font-size: 19px;
     padding: 20px;
     border-radius: 5px;
     min-height: 60px;
-    background-color: whitesmoke;
+    background-color: rgba(0,0,0,0.2);
+    color: whitesmoke;
     border: 1px solid dimgray;
-    margin: 2px, 0px, 2px, 0px;
+    margin: 4px;
     text-align: center;
 }
 
@@ -23,4 +25,11 @@ body {
 
 html {
     height: 100%;
+}
+input {
+    font-size: 19px;
+    background-color: rgba(0,0,0,0.2);
+}
+#addtaskbtn {
+    padding: 2px;
 }

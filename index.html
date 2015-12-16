@@ -26,9 +26,13 @@
             <!-- Collection of nav links and other content for toggling -->
             <div id="navbarCollapse" class="collapse navbar-collapse"
                     ng-controller="navController as nav">
-                <ul class="nav navbar-nav" >
+                <ul class="nav navbar-nav">
+                    <li>&nbsp;&nbsp;&nbsp;</li>
+                    <li>&nbsp;&nbsp;&nbsp;</li>
                     <li ng-class="{ active: nav.isActive('/home')}">
                         <a ui-sref="home">Lists</a></li>
+                    <li>&nbsp;&nbsp;&nbsp;</li>
+                    <li>&nbsp;&nbsp;&nbsp;</li>
                     <li ng-class="{ active: nav.isActive('/about')}">
                         <a ui-sref="about">About</a></li>
                 </ul>

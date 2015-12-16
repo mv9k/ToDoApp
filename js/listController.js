@@ -10,12 +10,29 @@
 
         // list everything
         var lc = this;
+        lc.task = '';
         lc.listname = 'default value';
-        lc.doSomething = doSomething;
+        //lc.sortTasks = sortTasks;
+        lc.tasks = [
+            {
+                name: 'first',
+                completed: false
+            },
+            {
+                name: 'second',
+                completed: false
+            }];
 
-        // define functions
-        function doSomething() {
-            lc.sometext = '';
+        lc.addTask = addTask;
+
+
+        //// define functions
+        //function sortTasks() {
+        //    lc.tasks = $filter('orderBy')(lc.tasks, 'priority');
+        //}
+        function addTask(task) {
+            lc.tasks.push(task);
+
         }
     }
 

@@ -1,10 +1,18 @@
-<div class="alert alert-success">
-    <h3>listController as lc</h3>
-    <input type="text" ng-model="lc.listname" />
-    <h4>List Name: <span ng-bind="lc.listname"></span></h4>
-    <button ng-click="lc.doSomething()">Clear</button>
-</div>
 
-<div class="col-xs-12 listblock">Test name</div>
-<div class="col-xs-12 listblock">Test name</div>
-<div class="col-xs-12 listblock">Test name</div>
+
+<div ng-controller="listController as lc">
+    <div class="listblock">
+        <form role="form" ng-submit="lc.addTask(task)">
+
+            <input type="text" ng-model="task.name" placeholder="enter task name" size="45" required/>
+            <!--<h4>List Name: <span ng-bind="lc.listname"></span></h4>-->
+            <!--<button ng-click="lc.doSomething()">cl</button>-->
+            <input type="submit" value=" + " id="addtaskbtn"/>
+        </form>
+    </div>
+    <div class="col-xs-12" ng-model="lc.tasks">
+        <div ng-repeat="task in lc.tasks track by $index" class="listblock">
+            <span ng-bind="task.name"></span>
+        </div>
+    </div>
+</div>
