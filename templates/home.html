@@ -5,8 +5,9 @@
 
     <nav>
         <ul class="pagination pagination-lg">
-            <li><a href="#"></a></li>
-            <li><a href="#" ng-repeat="listtab in lc.lists" ng-click="">{{listtab}}&nbsp;&nbsp;<span class="badge">{{ lc.tasks.length }}</a></li>
+            <li><a href="#" ng-click="">All Lists</a></li>
+            <li><a href="#" ng-repeat="listtab in lc.lists" ng-click="myFilter= {listname: 'test1'}">{{listtab}}&nbsp;&nbsp;<span class="badge">{{ lc.tasks.length }}</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-menu-right"></span></a></li>
         </ul>
     </nav>
 
