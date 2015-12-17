@@ -1,10 +1,41 @@
 
 
 <div ng-controller="listController as lc">
+
+
+    <nav>
+        <ul class="pagination pagination-lg">
+            <li><a href="#"></a></li>
+            <li><a href="#" ng-repeat="listtab in lc.lists" ng-click="">{{listtab}}&nbsp;&nbsp;<span class="badge">{{ lc.tasks.length }}</a></li>
+        </ul>
+    </nav>
+
+
+    <!--<nav role="navigation" class="navbar listbar">-->
+        <!--<div class="container">-->
+            <!--&lt;!&ndash; Brand and toggle get grouped for better mobile display &ndash;&gt;-->
+            <!--<div>-->
+                <!--<button type="button" data-target="#listbarCollapse" data-toggle="collapse" class="navbar-toggle">-->
+                    <!--<span class="sr-only">Toggle navigation</span>-->
+                    <!--<span class="icon-bar"></span>-->
+                    <!--<span class="icon-bar"></span>-->
+                    <!--<span class="icon-bar"></span>-->
+                <!--</button>-->
+            <!--</div>-->
+            <!--&lt;!&ndash; Collection of nav links and other content for toggling &ndash;&gt;-->
+            <!--<div id="listbarCollapse" class="collapse navbar-collapse">-->
+                <!--<ul class="nav">-->
+                    <!--<li ng-repeat="list in lc.lists">{{list}}&nbsp;&nbsp;<span class="badge">{{ lc.tasks.length | filter: {list} }}</span></li>-->
+                <!--</ul>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</nav>-->
+
+
     <div class="listblock">
         <form role="form" ng-submit="lc.addTask(task)">
 
-            <input type="text" ng-model="task.listname" placeholder="List Name" size="20" required/>
+            <input type="text" ng-model="task.listname" placeholder="List Name" size="30" required/>
             <input type="text" ng-model="task.name" placeholder="enter task name" size="30" required/>
             <input type="submit" value=" + " id="addtaskbtn"/>
         </form>
