@@ -44,13 +44,17 @@
         }
 
         function delList(list) {
-            var index = ls.lists.indexOf(list);
-            // backwards for loop to delete all the tasks in the list that's being deleted.
 
-            //for(var t=tasks.length-1; t>=0; t--) {
-            //    if (task.listname==list) {alert('heyo')};
-            //}
-            
+            var index = ls.lists.indexOf(list);
+
+            // backwards for loop to delete all the tasks in the list that's being deleted.
+            for(var t=ls.tasks.length-1; t>=0; t--) {
+                //window.alert ('heyo');
+                if(list==ls.tasks[t].listname) {
+                    ls.tasks.splice(ls.tasks[t], 1);
+                }
+            }
+
             // TODO: For loop that goes through tasks and deletes them. backwards for loop  for(var t=task.length-1; t>=0; t--){ if(matches) delete it }
             ls.lists.splice(index, 1);
         }
