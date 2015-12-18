@@ -1,6 +1,6 @@
 h3 { margin-top: 0; }
 h4 { margin-top: 6px !important; }
-.top-margin { margin-top: 60px; }
+.top-margin { margin-top: 40px; }
 input[type=text], button { border: black 1px solid; }
 
 .listblock {
@@ -41,13 +41,25 @@ input {
     padding: 10px;
     border-radius: 25px;
     border: 1px solid black;
-    color: lawngreen;
+    color: rgba(124, 252, 0, 0.42);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.finishbtn:hover {
+    color: rgb(124, 252, 0);
+    background-color: #4659bc;
 }
 .delbtn {
     padding: 10px;
     border-radius: 25px;
     border: 1px solid black;
-    color: #f5235e;
+    color: rgba(245, 35, 94, 0.61);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.delbtn:hover {
+    color: rgb(245, 35, 94);
+    background-color: #4659bc;
 }
 .listbar {
     color: seashell;

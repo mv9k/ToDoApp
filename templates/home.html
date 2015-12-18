@@ -5,32 +5,17 @@
 
     <nav>
         <ul class="pagination pagination-lg">
-            <li><a href="#" ng-click="">All Lists</a></li>
-            <li><a href="#" ng-repeat="listtab in lc.lists" ng-click="myFilter= {listname: 'test1'}">{{listtab}}&nbsp;&nbsp;<span class="badge">{{ lc.tasks.length }}</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-menu-right"></span></a></li>
+            <li><a href="#" ng-click="lc.currentList='all'">All Lists</a></li>
+            <li><a href="#" ng-repeat="listtab in lc.lists track by $index" ng-click="lc.currentList=$index">{{listtab}}&nbsp;&nbsp;&nbsp;<span class="badge">{{ (lc.tasks | filter: {listname:lc.lists[$index], finished: false}).length }}</span></a></li>
+            <li><a href="#">
+                <span class="glyphicon glyphicon-menu-right"></span>
+                <!--<span class="badge">{{ lc.tasks.length }}</span>-->
+            </a></li>
         </ul>
     </nav>
 
 
-    <!--<nav role="navigation" class="navbar listbar">-->
-        <!--<div class="container">-->
-            <!--&lt;!&ndash; Brand and toggle get grouped for better mobile display &ndash;&gt;-->
-            <!--<div>-->
-                <!--<button type="button" data-target="#listbarCollapse" data-toggle="collapse" class="navbar-toggle">-->
-                    <!--<span class="sr-only">Toggle navigation</span>-->
-                    <!--<span class="icon-bar"></span>-->
-                    <!--<span class="icon-bar"></span>-->
-                    <!--<span class="icon-bar"></span>-->
-                <!--</button>-->
-            <!--</div>-->
-            <!--&lt;!&ndash; Collection of nav links and other content for toggling &ndash;&gt;-->
-            <!--<div id="listbarCollapse" class="collapse navbar-collapse">-->
-                <!--<ul class="nav">-->
-                    <!--<li ng-repeat="list in lc.lists">{{list}}&nbsp;&nbsp;<span class="badge">{{ lc.tasks.length | filter: {list} }}</span></li>-->
-                <!--</ul>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</nav>-->
+
 
 
     <div class="listblock">
@@ -42,12 +27,18 @@
         </form>
     </div>
 
-<div class="col-xs-12 listblock" ng-repeat="list in lc.lists">
+
+
+
+
+
+
+<div class="col-xs-12 listblock" ng-repeat="list in lc.lists | filter:lc.lists[lc.currentList]">
     <h2>{{list}}</h2>
     <hr>
     <div class="col-xs-12">
         <div ng-repeat="task in lc.tasks | filter:{ listname: list }">
-            <div class="listblock" ng-class="{finished: task.finished}">
+            <div class="listblock" ng-class="{finished: task.finished == true}">
 
             <!-- FINISH BUTTON -->
             <div class="col-xs-2 finishbtn" ng-click="lc.finishTask(task)" ng-model="task.finished"><span class="glyphicon glyphicon-ok"></span></div>
@@ -61,10 +52,10 @@
 
 
             <!-- DELETE BUTTON -->
-            <div class="col-xs-2 delbtn" ng-click="lc.delTask($index)"><span class="glyphicon glyphicon-remove"></span></div>
+            <div class="col-xs-2 delbtn" ng-click="lc.delTask(task)"><span class="glyphicon glyphicon-remove"></span></div>
+            </div>
         </div>
     </div>
-</div>
 
 
     <!--<div class="col-xs-12">-->
@@ -88,4 +79,5 @@
             <!--</div>-->
         <!--</div>-->
     <!--</div>-->
+    </div>
 </div>

@@ -10,6 +10,7 @@
 
         // list everything
         var lc = this;
+        lc.currentList = 0;
         //lc.listname = 'default value';
         //lc.sortTasks = sortTasks;
         lc.tasks = [];
@@ -18,6 +19,7 @@
         lc.addTask = addTask;
         lc.delTask = delTask;
         lc.finishTask = finishTask;
+        //lc.listNames = listService.listNames;
 
 
         //// define functions
@@ -26,7 +28,12 @@
         //}
 
         function finishTask(task) {
-            task.finished = true;
+            if(task.finished == false) {
+                task.finished = true;
+            }
+            else {
+                task.finished = false;
+            }
         }
 
         function addTask(task) {
@@ -36,11 +43,14 @@
             // checks for duplicate list name in lists array before adding to it
             if(lc.lists.indexOf(task.listname) === -1) {
                 lc.lists.push(task.listname);
+
             }
         }
 
-        function delTask(index) {
+        function delTask(task) {
+            var index = lc.tasks.indexOf(task);
             lc.tasks.splice(index, 1);
+            //
         }
 
     }
