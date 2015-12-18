@@ -19,6 +19,8 @@
         lc.addTask = addTask;
         lc.delTask = delTask;
         lc.finishTask = finishTask;
+        lc.delList = delList;
+        lc.selectList = selectList;
         //lc.listNames = listService.listNames;
 
 
@@ -40,7 +42,7 @@
 
             lc.tasks.push({'name': task.name, 'listname': task.listname, 'finished': false});
 
-            // checks for duplicate list name in lists array before adding to it
+            // checks for duplicate list name in lists array before adding list to lists array.
             if(lc.lists.indexOf(task.listname) === -1) {
                 lc.lists.push(task.listname);
 
@@ -51,6 +53,15 @@
             var index = lc.tasks.indexOf(task);
             lc.tasks.splice(index, 1);
             //
+        }
+
+        function delList(list) {
+            var index = lc.lists.indexOf(list);
+            lc.lists.splice(index, 1);
+        }
+
+        function selectList($index) {
+            lc.currentList=$index;
         }
 
     }

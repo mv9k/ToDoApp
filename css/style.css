@@ -30,16 +30,26 @@ input {
     font-size: 19px;
     background-color: rgba(0,0,0,0.2);
 }
+button {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
 #addtaskbtn {
-    width: 55px;
-    padding: 2px;
+    width: 130px;
+    padding: 10px;
+    font-size: 1em;
+    background-color: rgba(115, 28, 255, 0.89) !important;
+    transition: all 0.4s ease;
+}
+#addtaskbtn:hover {
+    background-color: rgba(52, 185, 255, 0.89);
 }
 .finished {
-    background-color: rgba(77, 255, 228, 0.39);
+    background-color: rgba(58, 255, 211, 0.39);
+    color: rgba(0,0,0,0.2);
 }
 .finishbtn {
     padding: 10px;
-    border-radius: 25px;
     border: 1px solid black;
     color: rgba(124, 252, 0, 0.42);
     cursor: pointer;
@@ -51,7 +61,6 @@ input {
 }
 .delbtn {
     padding: 10px;
-    border-radius: 25px;
     border: 1px solid black;
     color: rgba(245, 35, 94, 0.61);
     cursor: pointer;
@@ -66,4 +75,9 @@ input {
 }
 .listbar li {
     background-color: black;
+}
+.closingX {
+    position: absolute;
+    top: 20px;
+    right: 20px;
 }
