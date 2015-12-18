@@ -4,7 +4,8 @@
     angular.module('basicApp', [
         "ui.router",
         "navController",
-        "listController"
+        "listController",
+        "listService"
     ])
 
     .config(["$stateProvider", "$urlRouterProvider",

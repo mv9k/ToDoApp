@@ -8,26 +8,14 @@
 
     function listService() {
 
-
         var ls = this;
-
-        ls.currentList = 0;
-        ls.listCount = 1;
-
-        ls.listNames = ['First List'];
-
         ls.tasks = [];
         ls.lists = [];
 
         ls.addTask = addTask;
         ls.delTask = delTask;
         ls.finishTask = finishTask;
-
-
-        //// define functions
-        //function sortTasks() {
-        //    lc.tasks = $filter('orderBy')(lc.tasks, 'priority');
-        //}
+        ls.delList = delList;
 
         function finishTask(task) {
             if(task.finished == false) {
@@ -36,24 +24,35 @@
             else {
                 task.finished = false;
             }
-
         }
 
         function addTask(task) {
 
             ls.tasks.push({'name': task.name, 'listname': task.listname, 'finished': false});
 
-            // checks for duplicate list name in lists array before adding to it.
+            // checks for duplicate list name in lists array before adding list to lists array.
             if(ls.lists.indexOf(task.listname) === -1) {
                 ls.lists.push(task.listname);
-                ls.listCount++;
-                ls.currentList = ls.listCount-1;
-                ls.listNames.push(task.listname);
+
             }
         }
 
-        function delTask(index) {
+        function delTask(task) {
+            var index = ls.tasks.indexOf(task);
             ls.tasks.splice(index, 1);
+            //
+        }
+
+        function delList(list) {
+            var index = ls.lists.indexOf(list);
+            // backwards for loop to delete all the tasks in the list that's being deleted.
+
+            //for(var t=tasks.length-1; t>=0; t--) {
+            //    if (task.listname==list) {alert('heyo')};
+            //}
+            
+            // TODO: For loop that goes through tasks and deletes them. backwards for loop  for(var t=task.length-1; t>=0; t--){ if(matches) delete it }
+            ls.lists.splice(index, 1);
         }
 
     }

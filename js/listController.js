@@ -4,64 +4,40 @@
     angular.module('listController', [])
         .controller('listController', listController);
 
-    listController.$inject = [];
+    listController.$inject = ['listService'];
 
-    function listController() {
+    function listController(listService) {
 
-        // list everything
         var lc = this;
         lc.currentList = 0;
-        //lc.listname = 'default value';
-        //lc.sortTasks = sortTasks;
-        lc.tasks = [];
-        lc.lists = [];
+        lc.tasks = listService.tasks;
+        lc.lists = listService.lists;
 
         lc.addTask = addTask;
         lc.delTask = delTask;
         lc.finishTask = finishTask;
         lc.delList = delList;
         lc.selectList = selectList;
-        //lc.listNames = listService.listNames;
-
-
-        //// define functions
-        //function sortTasks() {
-        //    lc.tasks = $filter('orderBy')(lc.tasks, 'priority');
-        //}
 
         function finishTask(task) {
-            if(task.finished == false) {
-                task.finished = true;
-            }
-            else {
-                task.finished = false;
-            }
+            listService.finishTask(task);
         }
 
         function addTask(task) {
-
-            lc.tasks.push({'name': task.name, 'listname': task.listname, 'finished': false});
-
-            // checks for duplicate list name in lists array before adding list to lists array.
-            if(lc.lists.indexOf(task.listname) === -1) {
-                lc.lists.push(task.listname);
-
-            }
+            listService.addTask(task);
         }
 
         function delTask(task) {
-            var index = lc.tasks.indexOf(task);
-            lc.tasks.splice(index, 1);
-            //
+            listService.delTask(task);
         }
 
         function delList(list) {
-            var index = lc.lists.indexOf(list);
-            lc.lists.splice(index, 1);
+            listService.delList(list);
         }
 
         function selectList($index) {
             lc.currentList=$index;
+
         }
 
     }
