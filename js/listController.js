@@ -26,6 +26,7 @@
 
         function addTask(task) {
             listService.addTask(task);
+            lc.selectList(lc.lists.indexOf(task.listname));
         }
 
         function delTask(task) {
