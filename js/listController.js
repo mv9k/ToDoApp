@@ -18,6 +18,7 @@
         lc.finishTask = finishTask;
         lc.delList = delList;
         lc.selectList = selectList;
+        lc.clearFinished = clearFinished;
 
         function finishTask(task) {
             listService.finishTask(task);
@@ -37,7 +38,10 @@
 
         function selectList($index) {
             lc.currentList=$index;
+        }
 
+        function clearFinished() {
+            listService.clearFinished();
         }
 
     }

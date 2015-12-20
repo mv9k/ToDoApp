@@ -16,6 +16,7 @@
         ls.delTask = delTask;
         ls.finishTask = finishTask;
         ls.delList = delList;
+        ls.clearFinished = clearFinished;
 
         function finishTask(task) {
             if(task.finished == false) {
@@ -23,6 +24,14 @@
             }
             else {
                 task.finished = false;
+            }
+        }
+
+        function clearFinished() {
+            for(var t=ls.tasks.length-1; t>=0; t--) {
+                if(ls.tasks[t].finished) {
+                    ls.tasks.splice(t, 1);
+                }
             }
         }
 
@@ -49,14 +58,13 @@
 
             // backwards for loop to delete all the tasks in the list that's being deleted.
             for(var t=ls.tasks.length-1; t>=0; t--) {
-                //window.alert ('heyo');
                 if(list==ls.tasks[t].listname) {
-                    ls.tasks.splice(ls.tasks[t], 1);
+                    ls.tasks.splice(t, 1);
                 }
             }
-
-            // TODO: For loop that goes through tasks and deletes them. backwards for loop  for(var t=task.length-1; t>=0; t--){ if(matches) delete it }
             ls.lists.splice(index, 1);
+            // TODO: For loop that goes through tasks and deletes them. backwards for loop  for(var t=task.length-1; t>=0; t--){ if(matches) delete it }
+
         }
 
     }
