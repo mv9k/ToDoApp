@@ -38,7 +38,7 @@ button {
     width: 130px;
     padding: 10px;
     font-size: 1em;
-    background-color: rgba(115, 28, 255, 0.89) !important;
+    background-color: rgba(40, 199, 255, 0.89) !important;
     transition: all 0.4s ease;
 }
 #addtaskbtn:hover {
