@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6b31a6b0-8e5f-48dd-9f0a-cb641aca8b1a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/listController.js" afterPath="$PROJECT_DIR$/js/listController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/listService.js" afterPath="$PROJECT_DIR$/js/listService.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/home.html" afterPath="$PROJECT_DIR$/templates/home.html" />
     </list>
     <ignored path="ToDoApp.iws" />
@@ -49,8 +47,8 @@
       <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.25">
-              <caret line="10" column="61" selection-start-line="10" selection-start-column="61" selection-end-line="10" selection-end-column="61" />
+            <state vertical-scroll-proportion="-5.0">
+              <caret line="8" column="292" selection-start-line="8" selection-start-column="292" selection-end-line="8" selection-end-column="292" />
               <folding />
             </state>
           </provider>
@@ -600,8 +598,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.25">
-          <caret line="10" column="61" selection-start-line="10" selection-start-column="61" selection-end-line="10" selection-end-column="61" />
+        <state vertical-scroll-proportion="-5.0">
+          <caret line="8" column="292" selection-start-line="8" selection-start-column="292" selection-end-line="8" selection-end-column="292" />
           <folding />
         </state>
       </provider>
