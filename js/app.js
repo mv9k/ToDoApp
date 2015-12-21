@@ -5,7 +5,9 @@
         "ui.router",
         "navController",
         "listController",
-        "listService"
+        "listService",
+        "ngAnimate",
+        "ngStorage"
     ])
 
     .config(["$stateProvider", "$urlRouterProvider",

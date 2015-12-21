@@ -42,7 +42,6 @@
             // checks for duplicate list name in lists array before adding list to lists array.
             if(ls.lists.indexOf(task.listname) === -1) {
                 ls.lists.push(task.listname);
-
             }
         }
 
@@ -56,15 +55,13 @@
 
             var index = ls.lists.indexOf(list);
 
-            // backwards for loop to delete all the tasks in the list that's being deleted.
+            // backwards for-loop to delete all the tasks in the list that's being deleted.
             for(var t=ls.tasks.length-1; t>=0; t--) {
                 if(list==ls.tasks[t].listname) {
                     ls.tasks.splice(t, 1);
                 }
             }
             ls.lists.splice(index, 1);
-            // TODO: For loop that goes through tasks and deletes them. backwards for loop  for(var t=task.length-1; t>=0; t--){ if(matches) delete it }
-
         }
 
     }

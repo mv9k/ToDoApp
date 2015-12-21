@@ -13,6 +13,10 @@ input[type=text], button { border: black 1px solid; }
     border: 1px solid dimgray;
     margin: 4px;
     text-align: center;
+    -webkit-box-shadow: inset 0px 0px 20px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 0px 20px -8px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 0px 20px -8px rgba(0,0,0,0.75);
+    transition: 0.5s ease all;
 }
 
 body {
@@ -44,20 +48,54 @@ button {
 #addtaskbtn:hover {
     background-color: rgba(52, 185, 255, 0.89);
 }
-.finished {
-    background-color: rgba(191, 160, 255, 0.78);
-    color: rgba(0,0,0,0.2);
+.success:after {
+    font-size: 12px;
+    content: "SUCCESS!";
 }
+.listblock.finished {
+    opacity: 5 !important;
+    background-color: rgba(156, 128, 255, 0.71);
+    color: rgba(25, 25, 25, 0.94);
+    position: relative;
+    bottom: 0;
+    -webkit-box-shadow: 0px 0px 20px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 20px -8px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 20px -8px rgba(0,0,0,0.75);
+}
+.listblock.finished-add {
+    position: relative;
+    bottom: 3px;
+    background-color: rgba(118, 0, 255, 0.45);
+    -webkit-box-shadow: 0px 0px 29px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 29px -5px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 29px -5px rgba(0,0,0,0.75);
+}
+.listblock.finished-remove {
+    position: relative;
+    top: 3px;
+    background-color: rgba(118, 0, 255, 0.45);
+    color: rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0px 0px 29px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 29px -5px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 29px -5px rgba(0,0,0,0.75);
+}
+
 .finishbtn {
     padding: 10px;
-    border: 1px solid black;
-    color: rgba(124, 252, 0, 0.42);
+    border: 1px solid black !important;
+    color: rgba(0, 0, 0, 0.7) !important;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 .finishbtn:hover {
+    color: rgb(124, 252, 0) !important;
+    background-color: rgba(70, 89, 188, 0.37);
+}
+.green {
     color: rgb(124, 252, 0);
-    background-color: #4659bc;
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid rgba(0,0,0,0.1);
 }
 .delbtn {
     padding: 10px;
@@ -80,4 +118,73 @@ button {
     position: absolute;
     top: 20px;
     right: 20px;
+}
+.task {
+    transition: 0.7s ease all;
+}
+.task.ng-enter {
+    opacity: 0;
+    top: 0;
+}
+.task.ng-enter.ng-enter-active {
+    opacity: 100;
+    position: relative;
+    top: 7px;
+}
+.task.ng-leave {
+    width: 100%;
+    top: 0;
+}
+.task.ng-leave.ng-leave-active {
+    opacity: 0;
+    position: relative;
+    top: 7px;
+
+}
+.list {
+    transition: 0.7s ease all;
+}
+.list.ng-enter {
+    opacity: 0;
+}
+.list.ng-enter.ng-enter-active {
+    opacity: 100;
+}
+.list.ng-leave {
+    opacity: 100%;
+}
+.list.ng-leave.ng-leave-active {
+    opacity: 0;
+}
+.listlabel {
+    transition: 0.5s ease all;
+    -webkit-box-shadow: inset 0px 0px 29px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 0px 29px -9px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 0px 29px -9px rgba(0,0,0,0.75);
+}
+.listlabel:hover {
+    background-color: rgba(69, 103, 255, 0.75) !important;
+    color: whitesmoke !important;
+    -webkit-box-shadow: 0px 0px 34px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 34px -9px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 34px -9px rgba(0,0,0,0.75);
+}
+.listlabel.ng-enter-active {
+    background-color: rgba(69, 103, 255, 0.75) !important;
+    color: whitesmoke !important;
+    -webkit-box-shadow: 0px 0px 34px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 34px -9px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 34px -9px rgba(0,0,0,0.75);
+}
+.listlabel.ng-leave-active {
+    background-color: rgba(69, 103, 255, 0.75) !important;
+    color: whitesmoke !important;
+    -webkit-box-shadow: 0px 0px 90px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 90px -9px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 90px -9px rgba(0,0,0,0.75);
+    opacity: 0;
+}
+.navbar-brand {
+    font-size: 30px;
+    font-family: "Dancing Script", cursive;
 }

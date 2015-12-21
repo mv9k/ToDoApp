@@ -6,9 +6,13 @@
 
     listController.$inject = ['listService'];
 
-    function listController(listService) {
+    function listController(listService, $localStorage) {
 
         var lc = this;
+
+        lc.saveData = saveData;
+        lc.loadData = loadData;
+
         lc.currentList = 0;
         lc.tasks = listService.tasks;
         lc.lists = listService.lists;
@@ -43,6 +47,14 @@
 
         function clearFinished() {
             listService.clearFinished();
+        }
+
+        function saveData() {
+            $localStorage.message = "Hello World";
+        }
+
+        function loadData() {
+            lc.message = $localStorage.message;
         }
 
     }

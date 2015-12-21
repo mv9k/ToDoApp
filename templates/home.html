@@ -5,9 +5,9 @@
 
     <nav>
         <ul class="pagination pagination-lg">
-            <li><a href="#" ng-click="lc.currentList='all'">Show All Lists</a></li>
-            <li><a href="#" ng-repeat="listtab in lc.lists track by $index" ng-click="lc.selectList($index)">{{listtab}}&nbsp;&nbsp;&nbsp;<span class="badge">{{ (lc.tasks | filter: {listname:lc.lists[$index], finished: true}:true).length }} / {{ (lc.tasks | filter: {listname:lc.lists[$index]}:true).length }}</span></a></li>
-            <li><a href="#" ng-click="lc.clearFinished()">
+            <li><a class="listlabel" href="#" ng-click="lc.currentList='all'">Show All Lists</a></li>
+            <li><a class="listlabel" href="#" ng-repeat="listtab in lc.lists track by $index" ng-click="lc.selectList($index)">{{listtab}}&nbsp;&nbsp;&nbsp;<span class="badge">{{ (lc.tasks | filter: {listname:lc.lists[$index], finished: true}:true).length }} / {{ (lc.tasks | filter: {listname:lc.lists[$index]}:true).length }}</span></a></li>
+            <li><a class="listlabel" href="#" ng-click="lc.clearFinished()">
                 <span>Clear Finished Tasks</span>&nbsp;&nbsp;<span class="glyphicon glyphicon-menu-right"></span>
                 <!--<span class="badge">{{ lc.tasks.length }}</span>-->
             </a></li>
@@ -22,7 +22,7 @@
         <form role="form" ng-submit="lc.addTask(task)" id="taskform">
 
             <input type="text" ng-model="task.listname" placeholder="List Name" size="30" required/>
-            <input type="text" ng-model="task.name" placeholder="enter task name" size="30" required/>
+            <input type="text" ng-model="task.name" placeholder="Task Name" size="30" required/>
             <button type="submit" form="taskform" value="Submit"><i class="glyphicon glyphicon-plus" id="addtaskbtn">&nbsp;Task</i></button>
         </form>
     </div>
@@ -33,22 +33,22 @@
 
 
 <div class="container">
-<div class="col-xs-12 listblock" ng-repeat="list in lc.lists | filter:lc.lists[lc.currentList]:true">
+<div class="col-xs-12 listblock list" ng-repeat="list in lc.lists | filter:lc.lists[lc.currentList]:true">
     <h2>{{list}}</h2>
     <!-- List Delete X -->
     <div class="col-xs-2 delbtn closingX" ng-click="lc.delList(list)"><span class="glyphicon glyphicon-remove"></span></div>
     <hr>
     <div class="col-xs-12">
-        <div ng-repeat="task in lc.tasks | filter:{ listname: list }:true">
+        <div ng-repeat="task in lc.tasks | filter:{ listname: list }:true" class="task">
             <div class="listblock" ng-class="{finished: task.finished == true}">
 
             <!-- FINISH BUTTON -->
-            <div class="col-xs-2 finishbtn" ng-click="lc.finishTask(task)" ng-model="task.finished"><span class="glyphicon glyphicon-ok"></span></div>
+            <div class="col-xs-2 green" ng-class="{finishbtn: task.finished == false}" ng-click="lc.finishTask(task)" ng-model="task.finished"><span class="glyphicon glyphicon-ok"></span></div>
 
 
             <!-- TASK NAME -->
             <div class="col-xs-8">
-            <span ng-bind="task.name"></span>
+            <span ng-bind="task.name"></span> &nbsp; <span ng-class="{success: task.finished == true}"></span>
             <!--<p>{{$index+1}}</p>-->
             </div>
 
