@@ -1,7 +1,4 @@
-
-
 <div ng-controller="listController as lc">
-
 
     <nav>
         <ul class="pagination pagination-lg">
@@ -14,10 +11,6 @@
         </ul>
     </nav>
 
-
-
-
-
     <div class="listblock">
         <form role="form" ng-submit="lc.addTask(task)" id="taskform">
 
@@ -26,11 +19,6 @@
             <button type="submit" form="taskform" value="Submit"><i class="glyphicon glyphicon-plus" id="addtaskbtn">&nbsp;Task</i></button>
         </form>
     </div>
-
-
-
-
-
 
 <div class="container">
 <div class="col-xs-12 listblock list" ng-repeat="list in lc.lists | filter:lc.lists[lc.currentList]:true">
@@ -59,28 +47,6 @@
         </div>
     </div>
 
-
-    <!--<div class="col-xs-12">-->
-        <!--<div ng-repeat="task in lc.tasks track by $index ">-->
-            <!--<div class="listblock" ng-class="{finished: task.finished}">-->
-
-                <!--&lt;!&ndash; FINISH BUTTON &ndash;&gt;-->
-                <!--<div class="col-xs-2 finishbtn" ng-click="lc.finishTask(task)" ng-model="task.finished"><span class="glyphicon glyphicon-ok"></span></div>-->
-
-
-                <!--&lt;!&ndash; TASK NAME &ndash;&gt;-->
-                <!--<div class="col-xs-8">-->
-                    <!--<span ng-bind="task.name"></span>-->
-                    <!--<p>{{$index+1}}</p>-->
-                <!--</div>-->
-
-
-                <!--&lt;!&ndash; DELETE BUTTON &ndash;&gt;-->
-                <!--<div class="col-xs-2 delbtn" ng-click="lc.delTask($index)"><span class="glyphicon glyphicon-remove"></span></div>-->
-
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
     </div>
 </div>
 </div>

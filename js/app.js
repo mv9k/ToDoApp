@@ -6,8 +6,7 @@
         "navController",
         "listController",
         "listService",
-        "ngAnimate",
-        "ngStorage"
+        "ngAnimate"
     ])
 
     .config(["$stateProvider", "$urlRouterProvider",
