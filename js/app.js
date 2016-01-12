@@ -7,7 +7,8 @@
         "listController",
         "listService",
         "ngAnimate",
-        "customFilters"
+        "customFilters",
+        "listDirectives"
     ])
 
     .config(["$stateProvider", "$urlRouterProvider",

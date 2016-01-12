@@ -47,6 +47,10 @@
         </div>
     </div>
 
+    <!-- No items to show -->
+
+    <no-items ng-hide="(lc.tasks | filter:{ listname: list }:true).length"></no-items>
+
     </div>
 </div>
 </div>
