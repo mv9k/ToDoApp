@@ -5,9 +5,9 @@
 
 
     <!-- TASK NAME -->
-    <div class="col-xs-8" ng-click="lc.renameTask(task, rename)">
-        <span ng-bind="task.name | capitalize"></span> &nbsp; <span ng-class="{success: task.finished == true}"></span>
-        <input type="text" ng-model="rename" placeholder={{task.name}}>
+    <div class="col-xs-8" ng-click="task.editing=true">
+        <span ng-bind="task.name | capitalize" ng-hide="task.editing"></span> &nbsp; <span ng-class="{success: task.finished == true}"></span>
+        <input type="text" ng-model="task.name" ng-blur="task.editing=false" ng-show="task.editing">
     </div>
 
 
