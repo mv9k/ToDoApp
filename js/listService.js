@@ -1,16 +1,18 @@
 (function(){
     'use strict';
 
-    angular.module('listService', [])
+    angular.module('listService', ['ngStorage'])
         .service('listService', listService);
 
-    listService.$inject = [];
+    listService.$inject = ['$localStorage'];
 
-    function listService() {
+    function listService($localStorage) {
 
         var ls = this;
-        ls.tasks = [];
-        ls.lists = [];
+        ls.tasks = $localStorage.tasks || [];
+        ls.lists = $localStorage.lists || [];
+
+
 
         ls.addTask = addTask;
         ls.delTask = delTask;
@@ -25,6 +27,10 @@
             else {
                 task.finished = false;
             }
+
+            $localStorage.tasks = ls.tasks;
+            $localStorage.lists = ls.lists;
+
         }
 
         function clearFinished() {
@@ -33,6 +39,8 @@
                     ls.tasks.splice(t, 1);
                 }
             }
+            $localStorage.tasks = ls.tasks;
+            $localStorage.lists = ls.lists;
         }
 
         function addTask(task) {
@@ -43,12 +51,16 @@
             if(ls.lists.indexOf(task.listname) === -1) {
                 ls.lists.push(task.listname);
             }
+            $localStorage.tasks = ls.tasks;
+            $localStorage.lists = ls.lists;
         }
 
         function delTask(task) {
             var index = ls.tasks.indexOf(task);
             ls.tasks.splice(index, 1);
-            //
+
+            $localStorage.tasks = ls.tasks;
+            $localStorage.lists = ls.lists;
         }
 
         function delList(list) {
@@ -62,6 +74,9 @@
                 }
             }
             ls.lists.splice(index, 1);
+
+            $localStorage.tasks = ls.tasks;
+            $localStorage.lists = ls.lists;
         }
 
     }

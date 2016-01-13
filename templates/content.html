@@ -1,0 +1,15 @@
+<div class="listblock" ng-class="{finished: task.finished == true}">
+
+    <!-- FINISH BUTTON -->
+    <div class="col-xs-2 green" ng-class="{finishbtn: task.finished == false}" ng-click="lc.finishTask(task)" ng-model="task.finished"><span class="glyphicon glyphicon-ok"></span></div>
+
+
+    <!-- TASK NAME -->
+    <div class="col-xs-8">
+        <span ng-bind="task.name | capitalize"></span> &nbsp; <span ng-class="{success: task.finished == true}"></span>
+    </div>
+
+
+    <!-- DELETE BUTTON -->
+    <div class="col-xs-2 delbtn" ng-click="lc.delTask(task)"><span class="glyphicon glyphicon-remove"></span></div>
+</div>
