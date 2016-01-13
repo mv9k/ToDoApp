@@ -20,6 +20,7 @@
         lc.delList = delList;
         lc.selectList = selectList;
         lc.clearFinished = clearFinished;
+        lc.renameTask = renameTask;
 
         function finishTask(task) {
             listService.finishTask(task);
@@ -44,6 +45,10 @@
 
         function clearFinished() {
             listService.clearFinished();
+        }
+
+        function renameTask(task, rename) {
+            listService.renameTask(task, rename);
         }
 
     }

@@ -19,6 +19,12 @@
         ls.finishTask = finishTask;
         ls.delList = delList;
         ls.clearFinished = clearFinished;
+        ls.renameTask = renameTask;
+
+        function renameTask(task, rename) {
+
+            task.name = rename;
+        }
 
         function finishTask(task) {
             if(task.finished == false) {
