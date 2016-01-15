@@ -7,7 +7,7 @@
     <!-- TASK NAME -->
     <div class="col-xs-8" ng-click="task.editing=true">
         <span ng-bind="task.name | capitalize" ng-hide="task.editing"></span> &nbsp; <span ng-class="{success: task.finished == true}"></span>
-        <input type="text" ng-model="task.name" ng-blur="task.editing=false" ng-show="task.editing">
+        <input type="text" ng-model="task.name" ng-blur="task.editing=false" ng-show="task.editing" focus-on="task.editing">
     </div>
 
 
