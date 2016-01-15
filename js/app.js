@@ -5,6 +5,7 @@
         "ui.router",
         "navController",
         "listController",
+        "langController",
         "listService",
         "ngAnimate",
         "customFilters",
