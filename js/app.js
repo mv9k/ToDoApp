@@ -8,7 +8,9 @@
         "listService",
         "ngAnimate",
         "customFilters",
-        "listDirectives"
+        "listDirectives",
+        "pascalprecht.translate",
+        "translationfile"
     ])
 
     .config(["$stateProvider", "$urlRouterProvider",
