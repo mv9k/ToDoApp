@@ -31,18 +31,23 @@
                     <li>&nbsp;&nbsp;&nbsp;</li>
                     <li>&nbsp;&nbsp;&nbsp;</li>
                     <li ng-class="{ active: nav.isActive('/home')}">
-                        <a ui-sref="home">Lists</a></li>
+                        <a ui-sref="home">{{ 'Home' | translate }}</a></li>
                     <li>&nbsp;&nbsp;&nbsp;</li>
                     <li>&nbsp;&nbsp;&nbsp;</li>
                     <li ng-class="{ active: nav.isActive('/about')}">
-                        <a ui-sref="about">About</a></li>
+                        <a ui-sref="about">{{ 'About' | translate }}</a></li>
                     <li>&nbsp;&nbsp;&nbsp;</li>
                     <li>&nbsp;&nbsp;&nbsp;</li>
                 </ul>
             </div>
             <div ng-controller="langController as lang">
                 <span>Language: </span>
-                <span ng-click="lang.choose('de')">Dutch</span>
+                <span ng-click="lang.choose('en')" class="lang-button">English</span>
+                <span ng-click="lang.choose('jp')" class="lang-button">Japanese</span>
+                <span ng-click="lang.choose('sp')" class="lang-button">Spanish</span>
+                <span ng-click="lang.choose('de')" class="lang-button">Dutch</span>
+                <span ng-click="lang.choose('ru')" class="lang-button">Russian</span>
+                <span ng-click="lang.choose('fi')" class="lang-button">Filipino</span>
             </div>
         </div>
     </nav>
