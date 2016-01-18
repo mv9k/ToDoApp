@@ -41,13 +41,15 @@
                 </ul>
             </div>
             <div ng-controller="langController as lang">
-                <span>Language: </span>
+                <span>{{ 'Language' | translate }}</span>
+                <span>&nbsp; : &nbsp;</span>
                 <span ng-click="lang.choose('en')" class="lang-button">English</span>
-                <span ng-click="lang.choose('jp')" class="lang-button">Japanese</span>
+                <span>&nbsp; | &nbsp;</span>
                 <span ng-click="lang.choose('sp')" class="lang-button">Spanish</span>
-                <span ng-click="lang.choose('de')" class="lang-button">Dutch</span>
+                <span>&nbsp; | &nbsp;</span>
                 <span ng-click="lang.choose('ru')" class="lang-button">Russian</span>
-                <span ng-click="lang.choose('fi')" class="lang-button">Filipino</span>
+                <span>&nbsp; | &nbsp;</span>
+                <span ng-click="lang.choose('fp')" class="lang-button">Filipino</span>
             </div>
         </div>
     </nav>
