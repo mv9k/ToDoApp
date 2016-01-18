@@ -36,7 +36,7 @@
                     Language: 'yazyk',
                     ListName: 'Imya',
                     TaskName: 'Imya zadachi',
-                    Task: 'zadacha'
+                    Task: 'Tsel\''
                 })
                 .translations('fp', {
                     AppTitle: 'Gagawin app',
