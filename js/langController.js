@@ -4,10 +4,19 @@
     angular.module('langController', [])
         .controller('langController', langController);
 
-    langController.$inject = [];
+    langController.$inject = ["$translate"];
 
-    function langController(lang) {
+    function langController($translate) {
 
+        var lang = this;
+
+        lang.choose = langChoose;
+
+        function langChoose(lang) {
+
+            $translate.use(lang);
+
+        }
 
 
     }

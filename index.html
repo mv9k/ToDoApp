@@ -36,7 +36,13 @@
                     <li>&nbsp;&nbsp;&nbsp;</li>
                     <li ng-class="{ active: nav.isActive('/about')}">
                         <a ui-sref="about">About</a></li>
+                    <li>&nbsp;&nbsp;&nbsp;</li>
+                    <li>&nbsp;&nbsp;&nbsp;</li>
                 </ul>
+            </div>
+            <div ng-controller="langController as lang">
+                <span>Language: </span>
+                <span ng-click="lang.choose('de')">Dutch</span>
             </div>
         </div>
     </nav>
@@ -63,9 +69,9 @@
     <script src="js/listDirectives.js"></script>
 
     <!-- app controller js files -->
-    <script src="js/langController.js"></script>
     <script src="js/navController.js"></script>
     <script type="text/javascript" src="js/listController.js"></script>
+    <script src="js/langController.js"></script>
 
     <!-- app service js file -->
     <script src="js/listService.js"></script>

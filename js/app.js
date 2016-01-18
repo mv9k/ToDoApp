@@ -5,13 +5,13 @@
         "ui.router",
         "navController",
         "listController",
-        "langController",
         "listService",
         "ngAnimate",
         "customFilters",
         "listDirectives",
         "pascalprecht.translate",
-        "translationfile"
+        "translationfile",
+        "langController"
     ])
 
     .config(["$stateProvider", "$urlRouterProvider",
